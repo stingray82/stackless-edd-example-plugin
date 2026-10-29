@@ -5,7 +5,7 @@
  * Tested up to:      7.1.3
  * Requires at least: 6.5
  * Requires PHP:      8.0
- * Version:           1.0.0.4
+ * Version:           1.0.2
  * Author:            Nathan Foley
  * Author URI:        https://reallyusefulplugins.com
  * License:           GPL2
@@ -18,46 +18,88 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
-define( 'UUPD_RUP_EXAMPLE_PLUGIN2_VENDOR', 'rup' );
-	define( 'UUPD_RUP_EXAMPLE_PLUGIN2_VERSION', '1.0.0.4' );
-	define( 'UUPD_RUP_EXAMPLE_PLUGIN2_MAIN_FILE', __FILE__ );
-	define( 'UUPD_RUP_EXAMPLE_PLUGIN2_ITEM_NUMBER', 92 );
-	define( 'UUPD_RUP_EXAMPLE_PLUGIN2_FRIENDLY_NAME', 'Example Plugin 2' );
-	define( 'UUPD_RUP_EXAMPLE_PLUGIN2_SLUG', 'example-plugin2' );
-	define( 'UUPD_RUP_EXAMPLE_PLUGIN2_SERVER_BASE', 'https://uupd.tdlab.uk' );
-	define( 'UUPD_RUP_EXAMPLE_PLUGIN2_MENU_SLUG', 'esp-example-setting-page' );
+// Configuration: paste into the main plugin PHP file. No opening PHP tag.
+define( 'UUPD_STACKLESS_TDLAB_EXAMPLE_PLUGIN_296_VENDOR', 'tdlab' );
+define( 'UUPD_STACKLESS_TDLAB_EXAMPLE_PLUGIN_296_VERSION', '1.0.2' );
+define( 'UUPD_STACKLESS_TDLAB_EXAMPLE_PLUGIN_296_ITEM_NUMBER', 296 );
+define( 'UUPD_STACKLESS_TDLAB_EXAMPLE_PLUGIN_296_FRIENDLY_NAME', 'Example Plugin' );
+define( 'UUPD_STACKLESS_TDLAB_EXAMPLE_PLUGIN_296_SLUG', 'example-plugin' );
+define( 'UUPD_STACKLESS_TDLAB_EXAMPLE_PLUGIN_296_SERVER_BASE', 'https://stacklessedd.tdlab.uk' );
+define( 'UUPD_STACKLESS_TDLAB_EXAMPLE_PLUGIN_296_MAIN_FILE', __FILE__ ); // Plugin main file, or theme functions.php
+define( 'UUPD_STACKLESS_TDLAB_EXAMPLE_PLUGIN_296_MENU_SLUG', 'example-plugin-license' );
 
-	add_action( 'plugins_loaded', function() {
-	    require_once __DIR__ . '/inc/updater.php';
-	    require_once __DIR__ . '/inc/class-uupd-license-ui.php';
+// Initialization: paste below the constants in the same PHP file.
+// Guard against missing constants when Part 1 was not copied or was regenerated.
+if ( ! defined( 'UUPD_STACKLESS_TDLAB_EXAMPLE_PLUGIN_296_VENDOR' ) ) { define( 'UUPD_STACKLESS_TDLAB_EXAMPLE_PLUGIN_296_VENDOR', 'tdlab' ); }
+if ( ! defined( 'UUPD_STACKLESS_TDLAB_EXAMPLE_PLUGIN_296_VERSION' ) ) { define( 'UUPD_STACKLESS_TDLAB_EXAMPLE_PLUGIN_296_VERSION', '1.0.0.3' ); }
+if ( ! defined( 'UUPD_STACKLESS_TDLAB_EXAMPLE_PLUGIN_296_ITEM_NUMBER' ) ) { define( 'UUPD_STACKLESS_TDLAB_EXAMPLE_PLUGIN_296_ITEM_NUMBER', 296 ); }
+if ( ! defined( 'UUPD_STACKLESS_TDLAB_EXAMPLE_PLUGIN_296_FRIENDLY_NAME' ) ) { define( 'UUPD_STACKLESS_TDLAB_EXAMPLE_PLUGIN_296_FRIENDLY_NAME', 'Example Plugin' ); }
+if ( ! defined( 'UUPD_STACKLESS_TDLAB_EXAMPLE_PLUGIN_296_SLUG' ) ) { define( 'UUPD_STACKLESS_TDLAB_EXAMPLE_PLUGIN_296_SLUG', 'example-plugin' ); }
+if ( ! defined( 'UUPD_STACKLESS_TDLAB_EXAMPLE_PLUGIN_296_SERVER_BASE' ) ) { define( 'UUPD_STACKLESS_TDLAB_EXAMPLE_PLUGIN_296_SERVER_BASE', 'https://stacklessedd.tdlab.uk' ); }
+if ( ! defined( 'UUPD_STACKLESS_TDLAB_EXAMPLE_PLUGIN_296_MAIN_FILE' ) ) { define( 'UUPD_STACKLESS_TDLAB_EXAMPLE_PLUGIN_296_MAIN_FILE', __FILE__ ); }
+if ( ! defined( 'UUPD_STACKLESS_TDLAB_EXAMPLE_PLUGIN_296_MENU_SLUG' ) ) { define( 'UUPD_STACKLESS_TDLAB_EXAMPLE_PLUGIN_296_MENU_SLUG', 'example-plugin-license' ); }
+add_action( 'plugins_loaded', static function () {
+    require_once __DIR__ . '/inc/updater.php';
+    require_once __DIR__ . '/inc/class-uupd-license-ui.php';
 
-	    \UUPD\UI\License\V1\UUPD_License_UI::register([
-	        'vendor'         => UUPD_RUP_EXAMPLE_PLUGIN2_VENDOR,
-	        'slug'           => UUPD_RUP_EXAMPLE_PLUGIN2_SLUG,
-	        'item_id'        => UUPD_RUP_EXAMPLE_PLUGIN2_ITEM_NUMBER,
-	        'license_server' => UUPD_RUP_EXAMPLE_PLUGIN2_SERVER_BASE,
-	        'metadata_base'  => UUPD_RUP_EXAMPLE_PLUGIN2_SERVER_BASE,
-	        'plugin_name'    => UUPD_RUP_EXAMPLE_PLUGIN2_FRIENDLY_NAME,
-	        'menu_parent'    => false,
-	        'menu_slug'      => UUPD_RUP_EXAMPLE_PLUGIN2_MENU_SLUG,
-	        'return_url'     => admin_url( 'admin.php?page=esp-example-setting-page#esp-licence' ),
-        'page_title'     => 'Example Plugin 2 License',
-	        'menu_title'     => 'License',
-	        'capability'     => 'manage_options',
-	        'pass_token'     => false,
-	        'token_param'    => 'token',
-	    ]);
+    \UUPD\UI\License\V1\UUPD_License_UI::register( [
+        'vendor' => UUPD_STACKLESS_TDLAB_EXAMPLE_PLUGIN_296_VENDOR,
+        'slug' => UUPD_STACKLESS_TDLAB_EXAMPLE_PLUGIN_296_SLUG,
+        'item_id' => UUPD_STACKLESS_TDLAB_EXAMPLE_PLUGIN_296_ITEM_NUMBER,
+        'plugin_name' => UUPD_STACKLESS_TDLAB_EXAMPLE_PLUGIN_296_FRIENDLY_NAME,
+        'license_server' => UUPD_STACKLESS_TDLAB_EXAMPLE_PLUGIN_296_SERVER_BASE,
+        'metadata_base' => UUPD_STACKLESS_TDLAB_EXAMPLE_PLUGIN_296_SERVER_BASE . '/wp-json/uupd/v1/metadata',
+        'menu_parent' => false,
+        'menu_slug' => UUPD_STACKLESS_TDLAB_EXAMPLE_PLUGIN_296_MENU_SLUG,
+        'return_url' => admin_url( 'admin.php?page=esp-example-setting-page#esp-licence' ),
+        'page_title' => 'Example Plugin License Settings',
+        'menu_title' => 'Example Plugin License',
+        'capability' => 'manage_options',
+    ] );
 
-	    \UUPD\V2\UUPD_Updater_V2::register([
-	        'vendor'      => UUPD_RUP_EXAMPLE_PLUGIN2_VENDOR,
-	        'plugin_file' => plugin_basename( UUPD_RUP_EXAMPLE_PLUGIN2_MAIN_FILE ),
-	        'slug'        => UUPD_RUP_EXAMPLE_PLUGIN2_SLUG,
-	        'name'        => UUPD_RUP_EXAMPLE_PLUGIN2_FRIENDLY_NAME,
-	        'version'     => UUPD_RUP_EXAMPLE_PLUGIN2_VERSION,
-	        'server'      => '',
-	        'license_key_transport' => 'header',
-	    ]);
-	}, 1 );
+    \UUPD\V2\UUPD_Updater_V2::register( [
+        'vendor' => UUPD_STACKLESS_TDLAB_EXAMPLE_PLUGIN_296_VENDOR,
+        'slug' => UUPD_STACKLESS_TDLAB_EXAMPLE_PLUGIN_296_SLUG,
+        'name' => UUPD_STACKLESS_TDLAB_EXAMPLE_PLUGIN_296_FRIENDLY_NAME,
+        'version' => UUPD_STACKLESS_TDLAB_EXAMPLE_PLUGIN_296_VERSION,
+        'mode' => 'json',
+        'server' => UUPD_STACKLESS_TDLAB_EXAMPLE_PLUGIN_296_SERVER_BASE . '/wp-json/uupd/v1/metadata',
+        'license_key_transport' => 'header',
+        'plugin_file' => plugin_basename( UUPD_STACKLESS_TDLAB_EXAMPLE_PLUGIN_296_MAIN_FILE ),
+    ] );
+}, 1 );
+
+add_filter( 'uupd/request_params/tdlab/example-plugin', static function ( $params ) {
+    $params['domain'] = home_url( '/' );
+    $params['item_id'] = UUPD_STACKLESS_TDLAB_EXAMPLE_PLUGIN_296_ITEM_NUMBER;
+    return $params;
+} );
+add_filter( 'uupd/request_headers/tdlab/example-plugin', static function ( $headers ) {
+    $option = get_option( 'uupd_license_' . sanitize_key( UUPD_STACKLESS_TDLAB_EXAMPLE_PLUGIN_296_VENDOR . '__' . str_replace( '-', '_', UUPD_STACKLESS_TDLAB_EXAMPLE_PLUGIN_296_SLUG ) ), [] );
+    $constant_name = 'UUPD_' . strtoupper( str_replace( '-', '_', UUPD_STACKLESS_TDLAB_EXAMPLE_PLUGIN_296_VENDOR ) ) . '_' . strtoupper( str_replace( '-', '_', UUPD_STACKLESS_TDLAB_EXAMPLE_PLUGIN_296_SLUG ) ) . '_LICENSE_KEY';
+    $key = defined( $constant_name ) ? constant( $constant_name ) : ( $option['license_key'] ?? '' );
+    if ( is_string( $key ) && $key !== '' && ( $option['status'] ?? '' ) === 'active' ) { $headers['Authorization'] = 'Bearer ' . $key; }
+    return $headers;
+} );
+
+
+
+/**
+ * TEST HARNESS: INLINE LICENCE RENDERER
+ *
+ * When testing a different generated bootloader, replace ONLY the
+ * render_box_for(...) statement below with the inline snippet supplied
+ * by that generator. Leave the dashboard untouched.
+ *
+ * This callback is executed when the settings page is displayed,
+ * after plugins_loaded has registered the licence instance.
+ */
+$esp_license_renderer = static function () {
+    \UUPD\UI\License\V1\UUPD_License_UI::render_box_for(
+        UUPD_STACKLESS_TDLAB_EXAMPLE_PLUGIN_296_SLUG,
+        UUPD_STACKLESS_TDLAB_EXAMPLE_PLUGIN_296_VENDOR
+    );
+};
 
 /**
  * Plugin Control - Premium Test Settings Page
@@ -651,6 +693,7 @@ CSS;
  * ------------------------------------------ */
 
 function esp_render_settings_page() {
+    global $esp_license_renderer;
 
     if (!current_user_can('manage_options')) {
         return;
@@ -933,33 +976,9 @@ function esp_render_settings_page() {
 
                         <?php
 
-                        // Your ORIGINAL licence integration.
-                        if (
-                            class_exists('\UUPD\UI\License\V1\UUPD_License_UI')
-                            && defined('UUPD_RUP_EXAMPLE_PLUGIN2_VENDOR')
-                            && defined('UUPD_RUP_EXAMPLE_PLUGIN2_SLUG')
-                        ) {
-
-                            $inst = \UUPD\UI\License\V1\UUPD_License_UI::get_instance(
-                                UUPD_RUP_EXAMPLE_PLUGIN2_VENDOR,
-                                UUPD_RUP_EXAMPLE_PLUGIN2_SLUG
-                            );
-
-                            if ($inst) {
-                                $inst->render_page();
-                            } else {
-                                echo '<div class="esp-license-warning">';
-                                echo 'The licence UI instance could not be loaded.';
-                                echo '</div>';
-                            }
-
-                        } else {
-
-                            echo '<div class="esp-license-warning">';
-                            echo '<strong>Licence Manager Unavailable</strong>';
-                            echo '<p>The UUPD licence class or required plugin constants are not available.</p>';
-                            echo '</div>';
-
+                        // Render the bootloader-specific callback defined above.
+                        if ( is_callable( $esp_license_renderer ) ) {
+                            $esp_license_renderer();
                         }
 
                         ?>
